@@ -23,7 +23,7 @@ DEBUG = False
 if DEBUG:
     SECRET_KEY = '$vsj#8b4!qn0+_qj5ursl#)s!u=xxg0&faaq!uadvtj0h33zce'
 else:
-    with open('~/secret_key.txt') as f:
+    with open('/home/lethe/secret_key.txt') as f:
         SECRET_KEY = f.read().strip()
 
 TEMPLATES = [
@@ -52,7 +52,7 @@ TEMPLATES = [
     },
 ]
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -115,6 +115,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
+
+STATIC_ROOT = '/var/www/static'
 
 BOOTSTRAP3 = {
 
